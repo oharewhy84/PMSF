@@ -130,7 +130,7 @@ $imgurCID = "";
 //-----------------------------------------------------
 // Login
 //-----------------------------------------------------
-$useLoginCookie = false;					    // Use cookie to restore session after browser is closed.
+$useLoginCookie = false;                                            // Use cookie to restore session after browser is closed.
 $forcedLogin = false;                                               // Force users to login before they can see map
 $allowMultiLogin = false;                                           // Allow users to login with multiple devices simulteously.
 $adminUsers = ['admin@example.com', 'admin2@example.com'];          // You can add multiple admins by adding them to the array.
@@ -195,6 +195,7 @@ $logFailedLogin = 'logs/failed_login.log';                          // File loca
 /* Native Auth */
 $noNativeLogin = true;                                              // This will enable the built in login system.
 $domainName = '';                                                   // If this is empty, reset-password emails will use the domain name taken from the URL.
+$manualAccessLevel = false;                                         // Reset access level if expire timestamp is in the past.
 //-----------------------------------------------------
 // FRONTEND SETTINGS
 //-----------------------------------------------------

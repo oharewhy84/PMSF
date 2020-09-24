@@ -297,6 +297,15 @@ function validateCookie($cookie)
         ]
     )->fetch();
     if (!empty($info['user'])) {
+        if ($manualAccessLevel && !$noNativeLogin && $info['access_level'] > 0 && $info['expire_timestamp'] < time()) {
+            $manualdb->update("users", [
+                "access_level" => 0
+            ], [
+                "id" => $info['id'],
+                "login_system" => 'native'
+            ]);
+            $info['access_level'] = 0;
+        }
         if ($useLoginCookie && $info['session_token'] == $_COOKIE['LoginSession']) {
             $manualdb->update('users', ['session_token' => $_SESSION['token']], ['id' => $info['id']]);
         }
