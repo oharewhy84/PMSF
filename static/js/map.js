@@ -7724,11 +7724,6 @@ function loadUser(engine) {
         },
         dataType: 'json',
         cache: false,
-        error: function error() {
-            // Display error toast
-            toastr['error'](i8ln('Manually reload the page'), i8ln('Failed to refresh session'))
-            toastr.options = toastrOptions
-        },
         complete: function complete() {
         }
     })
